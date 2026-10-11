@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>标点小蛇闯关 · 二年级华文</title>
+  <link rel="icon" type="image/png" href="assets/snake-head.png">
+  <meta name="description" content="二年级华文：控制小蛇吃水果，把句号、问号、叹号、逗号、顿号、冒号和引号放进句子里。">
+  <link rel="stylesheet" href="styles.css">
+<script src="https://kongsi-idea.vercel.app/data/track-use.js" data-slug="tahun2-bc-biaodian" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M4 9.5v5h3.6L12.5 19V5L7.6 9.5H4z" fill="currentColor"/><path d="M15.5 8.6a4.6 4.6 0 0 1 0 6.8M18 6.2a8 8 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9.5v5h3.6L12.5 19V5L7.6 9.5H4z" fill="currentColor"/><path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11.5 12 4l8.5 7.5M6 10v9.5h4.5v-5h3v5H18V10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.6 4.6L19 7.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 5v14M5.5 11.5 12 5l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7 4.6 4 5v13c3-.4 6 0 8 1.5 2-1.5 5-1.9 8-1.5V5c-3-.4-6 0-8 1.5zM12 6.5v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-dizzy" viewBox="0 0 24 24"><path d="M12 12m0 0c0-1.2 1.6-1.6 2.2-.6.9 1.4-.6 3.4-2.4 3.4-2.6 0-4-2.8-2.8-5C10.2 7.2 14 6.8 16 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-star-line" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<!-- ───────── 首页 ───────── -->
+<main id="home" class="screen is-active" aria-label="首页">
+  <div class="home-shade"></div>
+  <button class="snd-toggle" id="sndHome" type="button" aria-pressed="true"><svg><use href="#i-speaker"/></svg><span>音效 开</span></button>
+  <div class="home-inner">
+    <header class="sign" aria-label="标点小蛇闯关">
+      <span class="nail tl"></span><span class="nail tr"></span><span class="nail bl"></span><span class="nail br"></span>
+      <h1>标点小蛇闯关</h1>
+      <p class="sign-sub">二年级 · 华文 · 陈晓琪老师</p>
+    </header>
+
+    <p class="home-lead">小蛇吃水果，答对标点题就会长大一节！</p>
+
+    <div class="levels" role="radiogroup" aria-label="选择关卡">
+      <button class="lv" role="radio" aria-checked="true" data-level="easy" type="button">
+        <span class="lv-mark"><b>。</b></span><span class="lv-name">简单</span><span class="lv-sub">一个标点</span><span class="lv-tick"><svg><use href="#i-check"/></svg></span>
+      </button>
+      <button class="lv" role="radio" aria-checked="false" data-level="medium" type="button">
+        <span class="lv-mark"><b>、</b></span><span class="lv-name">中等</span><span class="lv-sub">两个标点</span><span class="lv-tick"><svg><use href="#i-check"/></svg></span>
+      </button>
+      <button class="lv" role="radio" aria-checked="false" data-level="hard" type="button">
+        <span class="lv-mark"><b>“”</b></span><span class="lv-name">挑战</span><span class="lv-sub">冒号和引号</span><span class="lv-tick"><svg><use href="#i-check"/></svg></span>
+      </button>
+    </div>
+
+    <div class="home-actions">
+      <button class="btn btn-gold btn-big" id="btnStart" type="button">开始闯关</button>
+      <button class="btn btn-maple" id="btnLesson" type="button"><svg><use href="#i-book"/></svg>标点小课堂</button>
+    </div>
+  </div>
+</main>
+
+<!-- ───────── 游戏 ───────── -->
+<section id="game" class="screen" aria-label="游戏">
+  <header class="hud">
+    <button class="chip chip-btn" id="btnBack" type="button"><svg><use href="#i-home"/></svg><span>回首页</span></button>
+    <div class="hud-mid">
+      <div class="chip" id="hudQ" aria-label="题号">第 <b>1</b>／<b>12</b> 题</div>
+      <div class="chip" id="hudLen" aria-label="蛇长">蛇长 <b>3</b></div>
+      <div class="chip" id="hudScore" aria-label="答对答错"><svg class="ic-ok"><use href="#i-check"/></svg>答对 <b>0</b><i class="sep"></i><svg class="ic-bad"><use href="#i-cross"/></svg>答错 <b>0</b></div>
+    </div>
+    <button class="chip chip-btn" id="sndGame" type="button" aria-pressed="true"><svg><use href="#i-speaker"/></svg><span>音效 开</span></button>
+  </header>
+
+  <div class="stage" id="stage">
+    <div class="board-frame" id="frame">
+      <canvas id="board" aria-label="游戏棋盘：用方向键或滑动控制小蛇"></canvas>
+      <div class="board-msg" id="boardMsg" hidden></div>
+      <div class="stun-chip" id="stunChip" hidden><svg><use href="#i-star-line"/></svg><span>晕晕的…</span><b>3</b></div>
+    </div>
+  </div>
+
+  <div class="dpad" id="dpad" aria-label="方向键">
+    <button type="button" class="dp dp-u" data-dir="up" aria-label="上"><svg><use href="#i-arrow"/></svg></button>
+    <button type="button" class="dp dp-l" data-dir="left" aria-label="左"><svg><use href="#i-arrow"/></svg></button>
+    <button type="button" class="dp dp-d" data-dir="down" aria-label="下"><svg><use href="#i-arrow"/></svg></button>
+    <button type="button" class="dp dp-r" data-dir="right" aria-label="右"><svg><use href="#i-arrow"/></svg></button>
+  </div>
+</section>
+
+<!-- ───────── 答题木牌 ───────── -->
+<div id="quiz" class="modal" hidden>
+  <div class="plaque" role="dialog" aria-modal="true" aria-label="标点填空">
+    <span class="nail tl"></span><span class="nail tr"></span>
+    <div class="plaque-head">
+      <span class="qno" id="qNo">第 1 题</span>
+      <button class="speak" id="qSpeak" type="button" aria-label="朗读句子"><svg><use href="#i-speaker"/></svg><span>听一听</span></button>
+    </div>
+    <p class="prompt">把标点放进空格里：</p>
+    <div class="sentence" id="qSentence"></div>
+    <div class="tray" id="qTray" aria-label="标点积木"></div>
+    <div class="feedback" id="qFeedback" hidden></div>
+    <div class="plaque-actions">
+      <button class="btn btn-gold" id="qSubmit" type="button" disabled>提交</button>
+      <button class="btn btn-green" id="qNext" type="button" hidden>继续</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───────── 结算 ───────── -->
+<div id="result" class="modal" hidden>
+  <div class="plaque plaque-result" role="dialog" aria-modal="true" aria-label="结算">
+    <span class="nail tl"></span><span class="nail tr"></span>
+    <h2 id="rTitle">闯关完成</h2>
+    <div class="stars" id="rStars"></div>
+    <p class="r-line" id="rLine"></p>
+    <p class="r-cheer" id="rCheer"></p>
+    <div class="plaque-actions r-actions">
+      <button class="btn btn-maple" id="rReview" type="button">查看错题</button>
+      <button class="btn btn-gold" id="rRetry" type="button">再练错题</button>
+      <button class="btn btn-green" id="rAgain" type="button">再玩一次</button>
+      <button class="btn btn-plain" id="rHome" type="button">回首页</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───────── 错题本 ───────── -->
+<div id="review" class="modal" hidden>
+  <div class="plaque plaque-wide" role="dialog" aria-modal="true" aria-label="错题本">
+    <span class="nail tl"></span><span class="nail tr"></span>
+    <h2>错题本</h2>
+    <ol class="rv-list" id="rvList"></ol>
+    <div class="plaque-actions"><button class="btn btn-gold" id="rvClose" type="button">返回</button></div>
+  </div>
+</div>
+
+<!-- ───────── 标点小课堂 ───────── -->
+<div id="lesson" class="modal" hidden>
+  <div class="plaque plaque-wide" role="dialog" aria-modal="true" aria-label="标点小课堂">
+    <span class="nail tl"></span><span class="nail tr"></span>
+    <h2>标点小课堂</h2>
+    <div class="cards" id="lsCards"></div>
+    <div class="plaque-actions"><button class="btn btn-gold" id="lsClose" type="button">我学会了</button></div>
+  </div>
+</div>
+
+<script src="js/questions.js"></script>
+<script src="audio/manifest.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+[
+ {
+  "text": "我爱我的家人",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "a4af94a7"
+ },
+ {
+  "text": "我爱我的家人。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "3471fd12"
+ },
+ {
+  "text": "小狗在草地上跑来跑去",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "aea06636"
+ },
+ {
+  "text": "小狗在草地上跑来跑去。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "cd7f7d8d"
+ },
+ {
+  "text": "你今天开心吗",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "9ebdf983"
+ },
+ {
+  "text": "你今天开心吗？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ded3f695"
+ },
+ {
+  "text": "这是谁的铅笔盒",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ca8aa146"
+ },
+ {
+  "text": "这是谁的铅笔盒？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "70277e3e"
+ },
+ {
+  "text": "天上的彩虹太美丽了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ce088f32"
+ },
+ {
+  "text": "天上的彩虹太美丽了！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "d54d8340"
+ },
+ {
+  "text": "加油你可以做到的",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "d5bb533f"
+ },
+ {
+  "text": "加油，你可以做到的！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f4e7601e"
+ },
+ {
+  "text": "妈妈买了我最爱吃的苹果",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "91c428f6"
+ },
+ {
+  "text": "妈妈买了我最爱吃的苹果。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "789a6e4d"
+ },
+ {
+  "text": "太棒了我们得奖了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "c0990eb3"
+ },
+ {
+  "text": "太棒了，我们得奖了！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "4dd6e6c8"
+ },
+ {
+  "text": "你喜欢唱歌还是跳舞",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "8aa671de"
+ },
+ {
+  "text": "你喜欢唱歌还是跳舞？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "7e228896"
+ },
+ {
+  "text": "太阳慢慢升起来了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "4590f4a9"
+ },
+ {
+  "text": "太阳慢慢升起来了。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "a1ffb788"
+ },
+ {
+  "text": "校园里的花朵真香啊",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "caaf05fc"
+ },
+ {
+  "text": "校园里的花朵真香啊！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "707535ca"
+ },
+ {
+  "text": "爸爸在书房里看报纸",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "8d838850"
+ },
+ {
+  "text": "爸爸在书房里看报纸。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "15b2344b"
+ },
+ {
+  "text": "那个盒子里装了什么东西",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "4c6f0779"
+ },
+ {
+  "text": "那个盒子里装了什么东西？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ffcb7b3f"
+ },
+ {
+  "text": "下雨了快跑",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ef2c3b2b"
+ },
+ {
+  "text": "下雨了，快跑！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "3d96cce0"
+ },
+ {
+  "text": "你要跟我一起去公园玩吗",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "a24d5b61"
+ },
+ {
+  "text": "你要跟我一起去公园玩吗？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "6b72e627"
+ },
+ {
+  "text": "小鸟在树上唱歌",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "b33f52c0"
+ },
+ {
+  "text": "小鸟在树上唱歌。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "8ea9f11b"
+ },
+ {
+  "text": "好大的一个西瓜啊",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f2577323"
+ },
+ {
+  "text": "好大的一个西瓜啊！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "50fed36b"
+ },
+ {
+  "text": "弟弟为什么哭了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "2860e68e"
+ },
+ {
+  "text": "弟弟为什么哭了？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "1a07f226"
+ },
+ {
+  "text": "早上我背着书包上学去",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "565b1156"
+ },
+ {
+  "text": "早上，我背着书包上学去。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "91a03664"
+ },
+ {
+  "text": "妈妈买了苹果香蕉和橙子",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "b7b9c03d"
+ },
+ {
+  "text": "妈妈买了苹果、香蕉和橙子。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "c1845ace"
+ },
+ {
+  "text": "放学了同学们高高兴兴地回家去",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "756ca559"
+ },
+ {
+  "text": "放学了，同学们高高兴兴地回家去。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "fbba95cb"
+ },
+ {
+  "text": "你的铅笔盒里有铅笔尺和橡皮吗",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "e5aede5f"
+ },
+ {
+  "text": "你的铅笔盒里有铅笔、尺和橡皮吗？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "80195d3b"
+ },
+ {
+  "text": "天气很热我喝了一大口水",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f3719fad"
+ },
+ {
+  "text": "天气很热，我喝了一大口水。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "78dd214b"
+ },
+ {
+  "text": "糟糕我忘记带水壶了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "184a21b5"
+ },
+ {
+  "text": "糟糕，我忘记带水壶了！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "7c4e3e86"
+ },
+ {
+  "text": "动物园里有狮子老虎和大象",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "24b6285c"
+ },
+ {
+  "text": "动物园里有狮子、老虎和大象。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f6701107"
+ },
+ {
+  "text": "你要去书局买故事书还是买画笔呢",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "8a8b960f"
+ },
+ {
+  "text": "你要去书局买故事书，还是买画笔呢？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "74775ea0"
+ },
+ {
+  "text": "饭前要洗手饭后要漱口",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "a0309a4a"
+ },
+ {
+  "text": "饭前要洗手，饭后要漱口。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "e4a13122"
+ },
+ {
+  "text": "操场上有红色黄色和蓝色的气球",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "75d9ca0f"
+ },
+ {
+  "text": "操场上有红色、黄色和蓝色的气球。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "8c373382"
+ },
+ {
+  "text": "哎呀我不小心摔碎了碗",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "9a9b3f1a"
+ },
+ {
+  "text": "哎呀，我不小心摔碎了碗！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "9b636455"
+ },
+ {
+  "text": "小猫小狗和小兔子都是可爱的动物",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "48c81fad"
+ },
+ {
+  "text": "小猫、小狗和小兔子都是可爱的动物。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "6488db64"
+ },
+ {
+  "text": "大家注意前面有水坑",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f5705731"
+ },
+ {
+  "text": "大家注意，前面有水坑！",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "27205454"
+ },
+ {
+  "text": "弟弟喜欢看动画片哥哥喜欢踢足球",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "c1bc734c"
+ },
+ {
+  "text": "弟弟喜欢看动画片，哥哥喜欢踢足球。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "1a89a29a"
+ },
+ {
+  "text": "桌子上放着书本铅笔和水彩笔",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "5fba4912"
+ },
+ {
+  "text": "桌子上放着书本、铅笔和水彩笔。",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "7c031521"
+ },
+ {
+  "text": "小明你在做什么呢",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f5fada35"
+ },
+ {
+  "text": "小明，你在做什么呢？",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "60e158fa"
+ },
+ {
+  "text": "奶奶高兴地说小明真是个懂事的好孩子",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "1143688f"
+ },
+ {
+  "text": "奶奶高兴地说：“小明真是个懂事的好孩子！”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "0590c0c5"
+ },
+ {
+  "text": "小明大声喊我考了一百分",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "121ee6d7"
+ },
+ {
+  "text": "小明大声喊：“我考了一百分！”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f1d7b887"
+ },
+ {
+  "text": "妈妈问你饿了吗",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "b9af8723"
+ },
+ {
+  "text": "妈妈问：“你饿了吗？”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "36408c85"
+ },
+ {
+  "text": "校长对同学们说大家要注意校园安全",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "b4b6f8a1"
+ },
+ {
+  "text": "校长对同学们说：“大家要注意校园安全。”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "667f5f20"
+ },
+ {
+  "text": "园丁笑着对我们说这里种着红色黄色和紫色的花朵",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "13dcd202"
+ },
+ {
+  "text": "园丁笑着对我们说：“这里种着红色、黄色和紫色的花朵。”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "28a9cce1"
+ },
+ {
+  "text": "老师问谁会回答这个问题",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f77fc849"
+ },
+ {
+  "text": "老师问：“谁会回答这个问题？”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f016543f"
+ },
+ {
+  "text": "爸爸对我说做事要认真",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "f790d6be"
+ },
+ {
+  "text": "爸爸对我说：“做事要认真。”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "2c1c2067"
+ },
+ {
+  "text": "姐姐高兴地叫道彩虹出来了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "47765395"
+ },
+ {
+  "text": "姐姐高兴地叫道：“彩虹出来了！”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "84a4846f"
+ },
+ {
+  "text": "医生问小强你哪里不舒服",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "dc708147"
+ },
+ {
+  "text": "医生问小强：“你哪里不舒服？”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "de8db67d"
+ },
+ {
+  "text": "小明问你喜欢吃炸鸡薯条还是三明治",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "edfe6f57"
+ },
+ {
+  "text": "小明问：“你喜欢吃炸鸡、薯条还是三明治？”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "7f613fcf"
+ },
+ {
+  "text": "班长对大家说请安静老师来了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "c942484d"
+ },
+ {
+  "text": "班长对大家说：“请安静，老师来了。”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ae1f0b89"
+ },
+ {
+  "text": "小丽惊喜地喊道太好了我们赢了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "406f953e"
+ },
+ {
+  "text": "小丽惊喜地喊道：“太好了，我们赢了！”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "7d60de75"
+ },
+ {
+  "text": "爷爷笑着说好的我知道了",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "7b19cf53"
+ },
+ {
+  "text": "爷爷笑着说：“好的，我知道了。”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ab61a797"
+ },
+ {
+  "text": "妹妹小声地问我可以吃蛋糕吗",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "2f5b90d5"
+ },
+ {
+  "text": "妹妹小声地问：“我可以吃蛋糕吗？”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "ab94b14d"
+ },
+ {
+  "text": "妈妈温柔地说孩子晚安",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "46323685"
+ },
+ {
+  "text": "妈妈温柔地说：“孩子，晚安。”",
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "key": "a83f1105"
+ }
+]
