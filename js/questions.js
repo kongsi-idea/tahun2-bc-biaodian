@@ -3,7 +3,7 @@
  * 用词对照课本：用「叹号」，不写「感叹号」。
  * 每一轮从题库里随机抽 ROUND_SIZE 题。 */
 window.PUNCT = {
-  ROUND_SIZE: { easy: 12, medium: 12, hard: 10 },
+  ROUND_SIZE: { easy: 12, medium: 12, hard: 12 },
   // 每关标点积木托盘（固定顺序，不洗牌，让学生记住位置）
   TRAY: {
     easy: ['。', '，', '？', '！'],

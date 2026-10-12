@@ -162,7 +162,7 @@ with sync_playwright() as p:
         print(f'关卡 {level}')
         page.click('#btnBack'); page.wait_for_timeout(300)
         start(page, level)
-        s = st(page); check(f'{level}: 题数与题库设定一致', s['total'] == {'easy': 12, 'medium': 12, 'hard': 10}[level], str(s['total']))
+        s = st(page); check(f'{level}: 题数与题库设定一致', s['total'] == {'easy': 12, 'medium': 12, 'hard': 12}[level], str(s['total']))
         check(f'{level}: 题目不重复', len(set(s['qs'])) == s['total'])
         s, grew_ok, same_ok, text_ok = play_round(page, level, wrong_idx, level)
         page.wait_for_selector('#result.is-open', timeout=4000); page.wait_for_timeout(1100)

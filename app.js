@@ -131,7 +131,7 @@ const G = {
   screen: 'home', level: 'easy',
   cols: 20, rows: 14, cell: 40, dpr: 1,
   playing: false, waiting: true, modal: null,
-  qs: [], qi: 0, right: 0, wrong: 0, wrongItems: [], practice: false,
+  qs: [], endless: false, qi: 0, right: 0, wrong: 0, wrongItems: [], practice: false,
   snake: [], prevHead: null, prevTail: null, dir: DIRS.right, queue: [], grow: 0, acc: 0, speed: 520,
   fruits: [], stunLeft: 0, pulseAt: -1e9, shakeAt: -1e9,
   quiz: null,
@@ -210,7 +210,7 @@ window.addEventListener('orientationchange', () => setTimeout(fit, 200));
 function startRound(level, items) {
   Voice.stop();
   G.level = level; G.speed = LEVELS[level].speed;
-  G.practice = !!items;
+  G.practice = !!items; G.endless = false;
   G.qs = items ? shuffle(items) : shuffle(PUNCT.BANK[level]).slice(0, PUNCT.ROUND_SIZE[level]);
   G.qi = 0; G.right = 0; G.wrong = 0; G.wrongItems = [];
   G.grow = 0; G.acc = 0; G.queue = []; G.stunLeft = 0; G.modal = null; G.quiz = null;
@@ -303,6 +303,7 @@ function update(dt) {
 }
 function crash(kind) {
   Sound.bump(); G.shakeAt = performance.now();
+  if (G.endless) return endlessOver(kind);
   placeSnakeStart();
   G.stunLeft = STUN_MS; G.crashKind = kind;
   const chip = $('#stunChip'); chip.hidden = false; $('#stunChip b').textContent = '3';
@@ -428,7 +429,7 @@ requestAnimationFrame(frame);
 /* ───────────────────────── HUD ───────────────────────── */
 function updateHUD() {
   const total = G.qs.length;
-  $('#hudQ').innerHTML = `第 <b>${Math.min(G.qi + 1, total)}</b>／<b>${total}</b> 题`;
+  $('#hudQ').innerHTML = G.endless ? `无限挑战　已答 <b>${G.qi}</b> 题` : `第 <b>${Math.min(G.qi + 1, total)}</b>／<b>${total}</b> 题`;
   const len = G.snake.length + G.grow;
   $('#hudLen').innerHTML = `蛇长 <b>${len}</b>`;
   $('#hudScore').innerHTML = `<svg class="ic-ok"><use href="#i-check"/></svg>答对 <b>${G.right}</b><i class="sep"></i><svg class="ic-bad"><use href="#i-cross"/></svg>答错 <b>${G.wrong}</b>`;
@@ -437,7 +438,15 @@ function bump(sel) { const e = $(sel); e.classList.remove('bump'); void e.offset
 
 /* ───────────────────────── 答题 ───────────────────────── */
 const blockHTML = p => `<i class="st s1"></i><i class="st s2"></i><i class="st s3"></i><i class="st s4"></i><b>${esc(p)}</b>`;
+function ensureQ() {                       // 无限挑战：题用完就把挑战关题库重新洗一遍接上
+  if (!G.endless || G.qi < G.qs.length) return;
+  let more = shuffle(PUNCT.BANK.hard);
+  const last = G.qs[G.qs.length - 1];
+  if (last && more[0] === last) more.push(more.shift());
+  G.qs = G.qs.concat(more);
+}
 function openQuiz() {
+  ensureQ();
   if (G.qi >= G.qs.length) return;
   const it = G.qs[G.qi];
   G.modal = 'quiz';
@@ -590,7 +599,7 @@ $('#qNext').addEventListener('click', () => {
   Voice.stop();
   closeModal('#quiz'); document.body.classList.remove('modal-open');
   const q = G.quiz; G.quiz = null;
-  if (G.qi >= G.qs.length) { G.modal = 'result'; setTimeout(showResult, 120); return; }
+  if (!G.endless && G.qi >= G.qs.length) { G.modal = 'result'; setTimeout(showResult, 120); return; }
   while (G.fruits.length < 3) spawnFruit();
   G.modal = null;
   if (q && q.ok) { G.pulseAt = performance.now(); bump('#hudLen'); }
@@ -598,7 +607,7 @@ $('#qNext').addEventListener('click', () => {
 });
 // 测试钩子：立刻弹出下一题
 function forceQuestion() {
-  if (G.screen !== 'game' || !G.playing || G.modal === 'quiz' || G.qi >= G.qs.length) return false;
+  if (G.screen !== 'game' || !G.playing || G.modal === 'quiz' || (!G.endless && G.qi >= G.qs.length)) return false;
   G.modal = 'pending'; G.waiting = false; setBoardMsg(''); openQuiz(); return true;
 }
 
@@ -618,10 +627,46 @@ function showResult() {
   $('#rLine').innerHTML = `蛇长 <b>${G.snake.length + G.grow}</b>　答对 <b>${G.right}</b> 题　答错 <b>${G.wrong}</b> 题`;
   $('#rCheer').textContent = G.wrong === 0 ? '全部答对！' + CHEER[3] : CHEER[n];
   $('#rReview').hidden = G.wrongItems.length === 0; $('#rRetry').hidden = G.wrongItems.length === 0;
+  $('#rAgain').hidden = false; $('#rStars').hidden = false;
+  const perfectHard = G.level === 'hard' && !G.practice && G.wrong === 0;     // 挑战关全对 → 解锁无限挑战
+  $('#rEndless').hidden = !perfectHard; $('#rEndless').textContent = '无限挑战';
+  if (perfectHard) $('#rCheer').textContent = '挑战关全部答对！还想继续吗？按「无限挑战」，一直玩到撞墙或撞到自己为止。';
   G.stars = n;
   openModal('#result'); Sound.good();
 }
 $('#rAgain').addEventListener('click', () => startRound(G.level));
+
+/* ───────────────────────── 无限挑战（挑战关全对后解锁） ───────────────────────── */
+const BEST_KEY = 'biaodian-endless-best';
+const bestGet = () => { try { return +localStorage.getItem(BEST_KEY) || 0; } catch (e) { return 0; } };
+const bestSet = v => { try { localStorage.setItem(BEST_KEY, String(v)); } catch (e) {} };
+function beginEndless(fresh) {
+  Voice.stop();
+  if (fresh) startRound('hard');                       // 重新开始：蛇回到 3 节
+  G.endless = true; G.practice = false;
+  G.qs = []; G.qi = 0; G.right = 0; G.wrong = 0; G.wrongItems = [];   // 无限挑战重新计数，蛇长保留
+  G.queue = []; G.acc = 0; G.stunLeft = 0; G.modal = null; G.quiz = null;
+  ['#quiz', '#result', '#review', '#lesson'].forEach(closeModal);
+  document.body.classList.remove('modal-open');
+  while (G.fruits.length < 3) spawnFruit();
+  G.playing = true; G.waiting = true;
+  setBoardMsg('无限挑战！撞到墙或撞到自己就结束，加油！');
+  $('#stunChip').hidden = true;
+  updateHUD();
+}
+function endlessOver(kind) {
+  const len = G.snake.length + G.grow, best = bestGet(), isBest = len > best;
+  if (isBest) bestSet(len);
+  G.playing = false; G.modal = 'result';
+  $('#rTitle').textContent = '无限挑战结束';
+  $('#rStars').hidden = true;
+  $('#rLine').innerHTML = `蛇长 <b>${len}</b>　答对 <b>${G.right}</b> 题　答错 <b>${G.wrong}</b> 题`;
+  $('#rCheer').textContent = (kind === 'wall' ? '撞到墙了！' : '撞到自己了！') + (isBest ? `新纪录：蛇长 ${len}！` : `最高纪录：蛇长 ${best}，再来一次超过它！`);
+  $('#rReview').hidden = G.wrongItems.length === 0; $('#rRetry').hidden = true; $('#rAgain').hidden = true;
+  $('#rEndless').hidden = false; $('#rEndless').textContent = '再来一次无限挑战';
+  openModal('#result'); Sound.bad();
+}
+$('#rEndless').addEventListener('click', () => beginEndless(G.endless));
 $('#rRetry').addEventListener('click', () => startRound(G.level, G.wrongItems.slice()));
 $('#rHome').addEventListener('click', goHome);
 $('#rReview').addEventListener('click', () => {
@@ -682,6 +727,7 @@ window.__biaodian = {
     };
   },
   // 测试用：把小蛇的头放到指定位置并朝向，方便测撞墙
+  _hold() { G.waiting = true; },
   _place(x, y, dir) { G.snake[0] = { x, y }; G.prevHead = { x, y }; G.dir = DIRS[dir]; G.waiting = false; },
   _tick: () => tick(),
   _setFruits(a) { G.fruits = a.map((f, i) => ({ x: f[0], y: f[1], kind: ['apple', 'orange', 'pear'][i % 3], phase: i })); },
